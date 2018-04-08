@@ -1,0 +1,11 @@
+.row
+  .col.l4.s5
+    button data-url="/reputations?rep_type=1&story_id=#{story.id}" class="waves-effect waves-light btn Rep__create"
+      i.material-icons.left
+        | thumb_up
+      = story.goods.count
+  .col.l4.s5
+    button data-url="/reputations?rep_type=0&story_id=#{story.id}" class="waves-effect waves-light btn red Rep__create"
+      i.material-icons.left
+        | thumb_down
+      = story.bads.count
