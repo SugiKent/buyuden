@@ -9,4 +9,6 @@ RUN bundle install
 ENV APP_HOME /buyuden
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
-ADD . $APP_HOME
+COPY . $APP_HOME
+
+CMD ["rails", "server", "-b", "0.0.0.0"]
