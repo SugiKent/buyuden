@@ -1,3 +1,5 @@
+- set_meta_tags title: "#{@story.title}", og: {type: 'article', url: request.url}, twitter: {url: request.url, title: @story.title}
+
 .section
   = link_to "一覧へ", root_path
 
