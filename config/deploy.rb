@@ -7,7 +7,7 @@ set :repo_url, "git@github.com:SugiKent/buyuden.git"
 set :branch, 'master'
 set :deploy_to, '/var/www/buyuden'
 
-set :linked_files, %w{ config/secrets.yml config/database.yml .env}
+set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets bundle public/system public/assets}
 set :keep_releases, 5
 set :rbenv_ruby, '2.4.1'
