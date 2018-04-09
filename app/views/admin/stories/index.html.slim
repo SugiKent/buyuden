@@ -1,0 +1,7 @@
+table
+  - @stories.each do |story|
+    tr
+      th
+        = story.title
+      td
+        = link_to "削除", admin_story_path(story), method: :delete, class: "btn"

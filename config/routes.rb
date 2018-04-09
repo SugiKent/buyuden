@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 
   resources :stories
   resources :reputations
+
+  namespace :admin do
+    resources :stories
+  end
 end

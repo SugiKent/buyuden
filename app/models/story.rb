@@ -1,5 +1,5 @@
 class Story < ApplicationRecord
-  has_many :reputations
+  has_many :reputations, dependent: :destroy
 
   validates :title, presence: true
   validates :content, presence: true
