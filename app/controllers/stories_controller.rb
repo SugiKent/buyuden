@@ -3,6 +3,8 @@ class StoriesController < ApplicationController
     @stories = Story.includes(:reputations).all.order('created_at DESC')
 
     @hot_stories = Story.joins(:reputations).where(reputations: {rep_type: 1}).group(:story_id).order('count(story_id) desc')
+
+    @reputations = Reputation.group(:story_id, :rep_type).pluck('story_id, rep_type, count(story_id)')
   end
   def show
     @story = Story.find(params[:id])

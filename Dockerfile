@@ -5,7 +5,6 @@ RUN gem install bundler
 WORKDIR /tmp
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
-COPY Gemfile* /tmp/
 RUN bundle install
 ENV APP_HOME /buyuden
 RUN mkdir -p $APP_HOME

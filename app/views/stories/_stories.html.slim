@@ -8,4 +8,6 @@
             p.Stories__text
               = story.content.truncate(50)
         .card-action
-          = render 'reputations/buttons', story: story
+          - goods = @reputations.find {|array| array[0] == story.id && array[1] == 1 }
+          - bads = @reputations.find {|array| array[0] == story.id && array[1] == 0 }
+          = render 'reputations/buttons', story: story, goods: goods.present? ? goods[2] : 0, bads: bads.present? ? bads[2] : 0
