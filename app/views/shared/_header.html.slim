@@ -1,12 +1,11 @@
 nav.nav-extended
   .nav-wrapper.teal.darken-2
     = link_to "就活武勇伝", root_path, class: "brand-logo center"
-  - if request.fullpath == '/'
-    .nav-content.blue-grey.darken-2
-      ul.tabs.tabs-transparent.tabs-fixed-width
-        li.tab
-          a href="#new" class='active'
-            | 新着武勇伝
-        li.tab
-          a href="#hot"
-            | 人気武勇伝
+  .nav-content.blue-grey.darken-2
+    ul.tabs.tabs-transparent.tabs-fixed-width
+      li.tab
+        a target='_self' href="/?new=true" class="#{'active' if request.fullpath.match(/(new=true)/)}"
+          | 新着武勇伝
+      li.tab
+        a target='_self' href="/?hot=true" class="#{'active' if request.fullpath.match(/(hot=true)/)}"
+          | 人気武勇伝
