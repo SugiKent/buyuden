@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title
+      | Admin|就活武勇伝
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    = csrf_meta_tags
+
+    script src="https://code.jquery.com/jquery-3.0.0.min.js"
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    = render 'shared/header'
+    .container
+      - flash.each do |key, value|
+        .card-panel class="#{key} darken-1"
+          span.white-text
+            = value
+
+      = yield
+    .fixed-action-btn
+      = link_to new_story_path, class: "btn-floating btn-large waves-effect waves-light red darken-1 #{'pulse' if request.fullpath == '/'}" do
+        i.material-icons
+          | mode_edit
