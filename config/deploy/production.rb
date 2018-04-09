@@ -60,5 +60,17 @@
 #     # password: "please use keys"
 #   }
 
-server '13.115.236.234', user: 'ec2-user', roles: %w{app db web}
-set :ssh_options, keys: '~/.ssh/buyuden_pem.pem'
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
+
+role :app, %w{ec2-user@13.115.236.234}
+role :web, %w{ec2-user@13.115.236.234}
+role :db,  %w{ec2-user@13.115.236.234}
+
+server '13.115.236.234', user: 'ec2-user', roles: %w{web app}
+
+set :ssh_options, {
+  keys: %w(~/.ssh/buyuden_pem.pem),
+  forward_agent: false,
+  auth_methods: %w(publickey)
+}
