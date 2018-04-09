@@ -3,7 +3,7 @@ html
   head
     title
       | 就活武勇伝
-    - if RAILS.env == 'production'
+    - if Rails.env == 'production'
       = render 'shared/analytics'
     meta[name="viewport" content="width=device-width, initial-scale=1"]
     = csrf_meta_tags
