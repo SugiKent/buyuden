@@ -19,6 +19,7 @@ namespace :unicorn do
 #unicornを再起動するメソッド
   def reload_unicorn
     execute :kill, "-s USR2 $(< #{fetch(:unicorn_pid)})"
+    start_unicorn
   end
 
 #unicronを強制終了するメソッド
