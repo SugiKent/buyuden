@@ -63,11 +63,11 @@
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
 
-role :app, %w{ec2-user@13.115.236.234}
-role :web, %w{ec2-user@13.115.236.234}
-role :db,  %w{ec2-user@13.115.236.234}
+role :app, %w{ec2-user@54.199.107.161}
+role :web, %w{ec2-user@54.199.107.161}
+role :db,  %w{ec2-user@54.199.107.161}
 
-server '13.115.236.234', user: 'ec2-user', roles: %w{web app}
+server '54.199.107.161', user: 'ec2-user', roles: %w{web app}
 
 set :ssh_options, {
   keys: %w(~/.ssh/buyuden_pem.pem),
