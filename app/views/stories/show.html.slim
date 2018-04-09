@@ -4,8 +4,8 @@
 .section
   h1
     = @story.title
-  p
-    = @story.content
+  p.Story__text
+    = hbr @story.content
 
 .section
   = render 'reputations/buttons', story: @story

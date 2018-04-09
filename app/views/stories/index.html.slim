@@ -1,14 +1,9 @@
-.row
-  .col.s12
-    .row
-      - @stories.each do |story|
-          .col.l6.s12
-            .card.hoverable
-              = link_to story_path(story) do
-                .card-content
-                  span.card-title
-                    = story.title.truncate(20)
-                  p
-                    = story.content.truncate(50)
-              .card-action
-                = render 'reputations/buttons', story: story
+.section
+  .row
+    .col.s12
+      .row
+        #new
+          = render 'stories', stories: @stories
+
+        #hot
+          = render 'stories', stories: @hot_stories

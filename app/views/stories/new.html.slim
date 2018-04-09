@@ -2,11 +2,11 @@
   .input-field
     i.material-icons.prefix
       | create
-    = f.text_field :title, placeholder: 'タイトル'
+    = f.text_field :title, placeholder: 'タイトル　会社名を入れるとわかりやすいよ！'
   .input-field
     i.material-icons.prefix
       | textsms
-    = f.text_area :content, placeholder: 'あなたの就活武勇伝を書いてね！', class: "materialize-textarea"
+    = f.text_area :content, placeholder: 'あなたの就活武勇伝を書いてね！', class: "materialize-textarea", rows: 25
   .center
     = button_tag :type => "submit", :class =>"btn waves-effect waves-light" do
       | Submit
